@@ -4,30 +4,31 @@ public class JavaPrac {
 
 	public static void main(String[] args) {
 
-		String input="I am not String";
-		
-		int left=0;
-		int right=input.length()-1;
-		char ch[]=input.toCharArray();
-		char temp;
-		while(left<right) {
-			
-			if(Character.isWhitespace(ch[left])) {
-				left++;
-			}
-			else if(Character.isWhitespace(ch[right])) {
-				right--;
-			}
-			else {
-				temp=ch[right];
-			ch[right]=	ch[left];
-			ch[left]=temp;
-			left++;
-			right--;
-			}
+		int num = 1;
+
+		// Upper Part
+		for (int i = 1; i <= 4; i++) {
+
+			for (int s = 4; s >= i; s--)
+				System.out.print("  ");
+
+			for (int j = 1; j <= i; j++)
+				System.out.print(num++ + "   ");
+
+			System.out.println();
 		}
-		String rev=new String(ch);
-		System.out.println(rev);
+
+		// Lower Part
+		for (int i = 3; i >= 1; i--) {
+
+			for (int s = 3; s >= i; s--)
+				System.out.print("  ");
+
+			for (int j = 1; j <= i; j++)
+				System.out.print(num++ + "   ");
+
+			System.out.println();
+		}
 	}
 
 }
